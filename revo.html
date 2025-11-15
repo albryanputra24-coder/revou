@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List Yama Apps</title>
+
+    <!-- Tailwind CDN resmi -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="p-5">
+
+    <!-- Header -->
+    <header class="mb-5">
+        <h1 class="text-3xl font-bold">Todo List Apps</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Form Section -->
+        <section class="mb-4">
+            <form onsubmit="addTodo(); return false;" class="flex flex-col gap-3 md:flex-row">
+
+                <!-- Todo Input -->
+                <input type="text" id="todo-input" 
+                       class="border rounded p-2 flex-1"
+                       placeholder="Enter a new todo item" required>
+
+                <!-- Date Input -->
+                <input type="date" id="todo-date" 
+                       class="border rounded p-2" required>
+
+                <!-- Add Button -->
+                <button type="submit"
+                        class="rounded p-2 bg-green-600 text-white">
+                    Add Todo
+                </button>
+            </form>
+        </section>
+
+        <!-- Action Buttons -->
+        <section class="flex justify-between mb-5">
+            <button class="rounded p-2 bg-blue-500 text-white">
+                Filter Todos
+            </button>
+
+            <button class="rounded p-2 bg-red-600 text-white" onclick="clearTodos()">
+                Clear All Todos
+            </button>
+        </section>
+
+        <!-- Todo List -->
+        <section>
+            <h2 class="text-2xl font-semibold mb-2">List of Todos</h2>
+            <ul id="todo-list" class="space-y-2">
+                <li class="text-gray-500" id="empty-message">No todos available</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="pt-5 text-gray-600">
+        <p>&copy; Muhammad Albryan Putra Darmawan</p>
+    </footer>
+
+    <!-- External JS -->
+    <script src="script.js"></script>
+</body>
+
+</html>
